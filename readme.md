@@ -29,7 +29,7 @@ TOKENIZERS_PARALLELISM=false
 
 Open [**http://localhost:8501**](http://localhost:8501) – ask questions like “CEO wants me to hide the delay…” The answer arrives in Markdown with cited clauses.
 
-## 🚚 Just pull the prebuilt image
+## 🚚 Just pull the prebuilt image (Docker-Hub is currently failing with 500s, so if this doesn't work build the image yourself try it like above)
 
 ```bash
  docker pull youssefmalek/contract_guardian:latest
