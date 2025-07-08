@@ -1,0 +1,30 @@
+# ─── Python ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# ─── Virtual-env / Poetry / Pipenv ────────
+.venv/
+env/
+.venv.bak/
+poetry.lock
+Pipfile.lock
+
+# ─── VS Code / IDEs ───────────────────────
+.vscode/
+.idea/
+
+# ─── Data & Vector DB (generated) ────────
+chroma.db/
+data/*_tmp/
+*.sqlite
+
+# ─── Environment / API keys ──────────────
+.env
+.env.*
+
+# ─── OS junk ─────────────────────────────
+.DS_Store
+Thumbs.db
