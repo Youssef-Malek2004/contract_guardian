@@ -4,7 +4,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from dotenv import load_dotenv
 
 from prompts import qa_prompt
-from tools import get_contract_information_tool
+from tools import get_contract_information_tool, get_risk_log_tool
 import os
 
 # ---- Config via env or pass params -----------------------------------
@@ -22,7 +22,7 @@ def build_agent(retriever, get_session_history):
         memory (RunnableWithMessageHistory) – main chat interface
     """
     tool_fn = get_contract_information_tool(retriever)
-    tools   = [tool_fn]
+    tools   = [tool_fn, get_risk_log_tool()]
 
     llm = ChatOpenAI(
         model=LLM_MODEL,
