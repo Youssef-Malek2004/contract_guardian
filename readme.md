@@ -13,13 +13,12 @@ AI legal‑risk companion for Egyptian construction projects. It bundles a **S
  git clone https://github.com/YOUR‑ORG/contract_guardian.git
  cd contract_guardian
 
-# 2 – create .env (keep secrets outside images!)
- cat > .env <<'EOF'
-OPENAI_API_KEY=sk-or-v1             # same key works for OpenRouter
+# 2 – create .env (keep secrets outside images!) Create it with this format
+
+OPENAI_API_KEY=OPENROUTER-API-KEY         # OpenRouter API Key as using Gemini (free version)
 OPENAI_API_BASE=https://openrouter.ai/api/v1
 OPENROUTER_API_BASE=https://openrouter.ai/api/v1
 TOKENIZERS_PARALLELISM=false
-EOF
 
 # 3 – build local image (≈2–4 min first time)
  docker build -t contract_guardian .
