@@ -26,7 +26,7 @@ TOKENIZERS_PARALLELISM=false
 
 Open [**http://localhost:8501**](http://localhost:8501) – ask questions like “CEO wants me to hide the delay…” The answer arrives in Markdown with cited clauses.
 
-\### 🚚 Just pull the prebuilt image
+## 🚚 Just pull the prebuilt image
 
 ```bash
  docker pull youssefmalek/contract_guardian:latest
@@ -64,7 +64,7 @@ Open [**http://localhost:8501**](http://localhost:8501) – ask questions like �
 
 ---
 
-\### 💡 Customization
+## 💡 Customization
 
 - Put additional contract PDFs/TXT in `data/`, rerun `python ingest.py`, rebuild image.
 - Swap embedding model in `ingest.py` & `agent.py` if you need Arabic/Egyptian dialect recall.
