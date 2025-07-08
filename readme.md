@@ -30,7 +30,7 @@ EOF
 
 Open [**http://localhost:8501**](http://localhost:8501) – ask questions like “CEO wants me to hide the delay…” The answer arrives in Markdown with cited clauses.
 
-\### 🚚 Just pull the prebuilt image
+## 🚚 Just pull the prebuilt image
 
 ```bash
  docker pull youssefmalek/contract_guardian:latest
