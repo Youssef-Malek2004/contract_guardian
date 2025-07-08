@@ -1,0 +1,35 @@
+EXTRACTS – EGYPTIAN CIVIL CODE (Law No. 131 of 1948, as amended)
+────────────────────────────────────────────────────────────────
+
+Article 147 Force of Contract  
+1. A contract makes the law of the parties. It may be revoked or altered only by
+ mutual consent or for reasons prescribed by law.  
+2. The contract must be performed in accordance with its contents and in a manner
+ consistent with the principles of good faith.
+
+Article 165 Liability for Non-Performance  
+If performance of the obligation becomes impossible by reason of the debtor’s
+fault, the debtor is liable for compensation for the damage suffered by the
+creditor.
+
+Article 218 Force Majeure  
+If the debtor proves that the non-performance was due to an external cause which
+could not have been foreseen or prevented (*force majeure*), the debtor shall not
+be liable for damages. Where performance becomes temporarily impossible, the
+obligation is suspended; the period of suspension is added to the agreed time for
+performance.
+
+Article 219 Partial Impossibility  
+Where the impossibility is partial or temporary, the court may, according to the
+circumstances, decide to reduce the obligation or extend the time for performance.
+
+Article 374 Prescription of Contractual Claims  
+All actions arising out of a contract shall be barred by prescription after
+fifteen (15) years, except as otherwise provided by special laws.
+
+► **Practical Implications for Construction Contracts**  
+• Under Articles 218-219, events such as exceptional flooding on site that could
+ not have been foreseen constitute *force majeure*, allowing the Contractor to
+ request an extension of time without liability for delay penalties.  
+• Article 147 imposes a duty of good faith; withholding notice of delay from the
+ Employer may be considered bad faith and jeopardise entitlement to an extension.

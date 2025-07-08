@@ -1,0 +1,26 @@
+.
+├── .env
+├── .gitignore
+├── .streamlit
+│   └── config.toml
+├── __init__.py
+├── agent.log
+├── agent.py
+├── app.py
+├── chroma_db
+│   ├── bb9b8f44-733f-4ffe-acc4-1281c3da7ff7
+│   │   ├── data_level0.bin
+│   │   ├── header.bin
+│   │   ├── length.bin
+│   │   └── link_lists.bin
+│   └── chroma.sqlite3
+├── data
+│   ├── egypt_civil_code_excerpt.txt
+│   └── sample_contract_clause.txt
+├── ingest.py
+├── prompts.py
+├── structure.txt
+├── terminal_agent.py
+└── tools.py
+
+5 directories, 19 files

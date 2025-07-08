@@ -1,0 +1,41 @@
+PROJECT AGREEMENT – SECTION 20 TIME FOR COMPLETION AND COMPENSATION EVENTS
+───────────────────────────────────────────────────────────────────────────
+
+20.1 Contractor’s Obligation to Notify Delay  
+The Contractor shall, within fourteen (14) days after becoming aware of any event or
+circumstance that may cause delay to the Works, give written notice to the Engineer
+describing (i) the event, (ii) the anticipated impact on the Time for Completion, and
+(iii) the mitigation measures proposed. Failure to provide such notice within the
+said period shall forfeit the Contractor’s entitlement to any extension of time or
+associated cost.
+
+20.2 Claim for Extension of Time (EOT)  
+If completion of the Works is or will be delayed by any of the following causes,
+the Contractor shall be entitled, **subject to Sub-Clause 20.1**, to an extension of
+the Time for Completion equal to the period of delay properly attributable to such
+cause:  
+(a) Variations instructed under Clause 13;  
+(b) Suspension or disruption caused by the Employer or the Engineer;  
+(c) Unforeseeable physical conditions as defined in Sub-Clause 4.12;  
+(d) Force majeure as described in Clause 19;  
+(e) Delay attributable to public authorities, including late issuance of permits
+  under Egyptian Law 5/2015 on Industrial Licensing.
+
+The Contractor shall submit a *fully detailed* claim within twenty-eight (28) days
+of the initial notice, identifying the contractual basis, causal analysis, and
+substantiating records.
+
+20.3 Prolongation Cost  
+Where the delay entitling the Contractor to an extension of time also results in
+additional cost, the Contractor shall be entitled to such cost in accordance with
+Sub-Clause 12.3, provided the claim is made concurrently with the EOT submission.
+
+20.4 Mitigation  
+The Contractor shall at all times use reasonable endeavours to minimise delay and
+associated cost, including acceleration or resequencing of activities where
+practicable.
+
+20.5 Time-bar  
+No extension of time or cost shall be granted if the Contractor fails to comply
+with the time limits stated in Sub-Clauses 20.1 and 20.2, unless the Engineer
+determines that the circumstances justified late submission.
