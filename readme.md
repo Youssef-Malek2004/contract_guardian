@@ -1,21 +1,25 @@
 ---
+
 # Contract Guardian ⚖️
 
 AI legal‑risk companion for Egyptian construction projects. It bundles a **Streamlit** chat UI, a **LangChain** agent that calls Gemini‑Flash through **OpenRouter**, and a persisted **Chroma** vector store of Egyptian Civil Code & sample contract clauses.
+
 ---
 
 ## 🚀 Quick start
 
 ```bash
 # 1 – clone
- git clone https://github.com/Youssef-Malek2004/contract_guardian.git
+ git clone https://github.com/YOUR‑ORG/contract_guardian.git
  cd contract_guardian
-F
-# 2 – create .env (keep secrets outside images!) Make sure your .env looks like this
-OPENAI_API_KEY=YOUR-OPENROUTER-API-KEY
+
+# 2 – create .env (keep secrets outside images!)
+ cat > .env <<'EOF'
+OPENAI_API_KEY=sk-or-v1             # same key works for OpenRouter
 OPENAI_API_BASE=https://openrouter.ai/api/v1
 OPENROUTER_API_BASE=https://openrouter.ai/api/v1
 TOKENIZERS_PARALLELISM=false
+EOF
 
 # 3 – build local image (≈2–4 min first time)
  docker build -t contract_guardian .
@@ -25,9 +29,8 @@ TOKENIZERS_PARALLELISM=false
 ```
 
 Open [**http://localhost:8501**](http://localhost:8501) – ask questions like “CEO wants me to hide the delay…” The answer arrives in Markdown with cited clauses.
----
 
-## 🚚 Just pull the prebuilt image
+\### 🚚 Just pull the prebuilt image
 
 ```bash
  docker pull youssefmalek/contract_guardian:latest
@@ -41,7 +44,7 @@ Open [**http://localhost:8501**](http://localhost:8501) – ask questions like �
 | Path                     | Purpose                                                                  |
 | ------------------------ | ------------------------------------------------------------------------ |
 | `app.py`                 | Streamlit chat interface (Markdown answers + sources)                    |
-| `agent.py`               | Builds LangChain _tool‑calling_ agent (`search_contracts` tool)          |
+| `agent.py`               | Builds LangChain *tool‑calling* agent (`search_contracts` tool)          |
 | `ingest.py`              | Loads `data/`, splits, embeds with **E5‑small‑v2**, writes **Chroma** DB |
 | `chroma_db/`             | Persisted vector store (\~40 MB) baked into image                        |
 | `data/`                  | Sample contract clause & Civil Code excerpts                             |
@@ -56,24 +59,56 @@ Open [**http://localhost:8501**](http://localhost:8501) – ask questions like �
 
 ## 🛠 Tech stack & tools
 
-- **Embeddings:** `intfloat/e5-small-v2` (fast, 120 MB)
-- **LLM backend:** Gemini‑Flash via OpenRouter
-- **RAG stack:** Chroma vector DB + LangChain `RetrieverTool`
-- **Agent:** LangChain agent‑executor with single `search_contracts` tool
-- **UI:** Streamlit (markdown output)
-- **Container:** Python 3.12‑slim multi‑stage build; no secrets baked
+* **Embeddings:** `intfloat/e5-small-v2` (fast, 120 MB)
+* **LLM backend:** Gemini‑Flash via OpenRouter
+* **RAG stack:** Chroma vector DB + LangChain `RetrieverTool`
+* * **Agent:** LangChain agent‑executor with two tools
+    • `search_contracts` → retrieves relevant contract clauses or Civil Code articles
+    • `log_risk_event` → appends a Markdown summary of any high‑risk action to `risk_events.jsonl` for audit purposes
+* **UI:** Streamlit (markdown output)
+* **Container:** Python 3.12‑slim multi‑stage build; no secrets baked
 
 ---
 
-## 💡 Customization
+\### 💡 Customization
 
-- Put additional contract PDFs/TXT in `data/`, rerun `python ingest.py`, rebuild image.
-- Swap embedding model in `ingest.py` & `agent.py` if you need Arabic/Egyptian dialect recall.
-- Mount `chroma_db` instead of baking it:
+* Put additional contract PDFs/TXT in `data/`, rerun `python ingest.py`, rebuild image.
+* Swap embedding model in `ingest.py` & `agent.py` if you need Arabic/Egyptian dialect recall.
+* Mount `chroma_db` instead of baking it:
+
   ```bash
   docker run -p 8501:8501 -v $(pwd)/chroma_db:/app/chroma_db --env-file .env contract_guardian
   ```
 
 ---
 
-Made with 🏗️ ⚖️ and ☕ by **Youssef Malek**.
+## 🧩 Key design choices & known limitations
+
+| Aspect             | Decision                                          | Limitation                                                    |
+| ------------------ | ------------------------------------------------- | ------------------------------------------------------------- |
+| **Embedding size** | `intfloat/e5‑small‑v2` to stay Docker‑friendly    | Not bilingual; misses purely Arabic clauses                   |
+| **Vector store**   | Local Chroma persisted at build                   | Image rebuild required after ingest unless you mount a volume |
+| **LLM provider**   | Gemini‑Flash via OpenRouter (free tier)           | 30‑60 sec hard rate‑limit; API subject to fair‑use outages    |
+| **Risk logging**   | File‑based `risk_events.jsonl` tool (zero config) | No real‑time email/Slack push until SMTP/webhook configured   |
+| **UI**             | Streamlit for one‑file deploy                     | Not mobile‑optimised; single‑user session                     |
+
+---
+
+## 🔗 Replicate locally and extend
+
+1. Clone and run exactly as in **Quick start**.
+2. Add PDFs or TXT in `data/` before running if you want extra documents.
+3. To switch LLM change `OPENAI_API_BASE` and `OPENAI_API_KEY` in `.env` then rebuild.
+
+---
+
+### 🛠 Tools summary
+
+| Tool                           | Purpose                                                          | Config needed                            |
+| ------------------------------ | ---------------------------------------------------------------- | ---------------------------------------- |
+| `search_contracts`             | Retrieves up to four contract or Civil Code excerpts from Chroma | none                                     |
+| `log_risk_event`               | Appends high‑risk actions to `risk_events.jsonl` for audit       | none                                     |
+
+---
+
+Made with 🏗️ ⚖️ and ☕ by **Youssef Malek**.
