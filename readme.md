@@ -8,9 +8,9 @@ AI legal‑risk companion for Egyptian construction projects. It bundles a **S
 
 ```bash
 # 1 – clone
- git clone https://github.com/YOUR‑ORG/contract_guardian.git
+ git clone https://github.com/Youssef-Malek2004/contract_guardian.git
  cd contract_guardian
-
+F
 # 2 – create .env (keep secrets outside images!)
  cat >.env <<'EOF'
 OPENAI_API_KEY=sk-or-v1             # same key works for OpenRouter
