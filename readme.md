@@ -111,4 +111,15 @@ Open [**http://localhost:8501**](http://localhost:8501) – ask questions like �
 
 ---
 
+## 🚀 Possible extensions
+
+| Idea                                                 | Value                                                          | Effort                                              |
+| ---------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------- |
+| **Kafka listener** for project email or Slack events | Flags risky instructions in real time without manual chat      | Medium – add simple Kafka consumer & parse envelope |
+| **Automatic email follow‑up** to project officials   | Sends the logged risk summary to PM, Contracts Engineer, Legal | Low – reuse `send_risk_alert` SMTP tool             |
+| **Schedule-aware risk scoring**                      | Boost risk if action violates nearing contractual deadline     | Medium – needs project calendar feed                |
+| External **PostgreSQL audit DB**                     | Persistent, queryable history across projects                  | Medium – SQLAlchemy layer, change log tool          |
+
+---
+
 Made with 🏗️ ⚖️ and ☕ by **Youssef Malek**.
